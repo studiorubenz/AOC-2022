@@ -17,10 +17,12 @@ main =
         |>
 
         # part 1
-        # findMax
+        findMax
 
         # part 2
-        findTopThree
+        # findTopThree
+
+        |> Stdout.line
 
     Task.attempt task \res ->
         when res is
@@ -42,7 +44,6 @@ findMax = \list ->
     |> List.max
     |> Result.withDefault 0
     |> Num.toStr
-    |> Stdout.line
 
 findTopThree = \list ->
     sortedList =
@@ -56,4 +57,3 @@ findTopThree = \list ->
 
     sum
     |> Num.toStr
-    |> Stdout.line
